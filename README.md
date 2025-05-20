@@ -1,4 +1,7 @@
 # Overview
+
+***Work In Progress (WIP) - ALPHA version - will be updated periodically until GM'd***
+
 The Universal Fan Controller (UFC) is a stand-alone fan management utility for Linux servers, written in BaSH (Bourne Again SHell).
 
 UFC monitors and adjusts fan speeds in real-time to maintain optimal CPU and disk storage temperatures while minimizing fan noise. It employs a two-tiered approach: a simple rule-based method for CPU cooling, and a more advanced [P.I.D. controller](/documentation/universal-fan-controller/pid-explained.md) logic model for device temperature regulation.
