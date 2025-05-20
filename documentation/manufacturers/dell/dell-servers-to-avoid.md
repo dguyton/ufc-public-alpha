@@ -1,0 +1,2 @@
+--> verified does not work on T150 (cannot downgrade to < iDRAC 9 v5.4) --> fan_speed = 0-100 in hex
+--> R710 b/c its finicky

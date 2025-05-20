@@ -1,0 +1,9 @@
+# IPMI Fan Header Write Order
+
+IPMI is a useful tool for controlling server fan speeds on those supporting it. However, fan header write-order is an oft overlooked, but crucial factor in the correct construction of related IPMI `raw` write commands.
+
+When it comes to writing / setting fan speeds, the BMC expects fan header ID bytes in IPMI `raw` commands to be in a particular positional order. The exact order in which IPMI fan controlling commands must be positioned in the IPMI raw write command. However, one cannot presume the ordering will be the same as how the names appear listed when read by tools capable of reading fan metadata, such as **lm-sensors**, **ipmitool**, **openbmc**, etc.). It is not uncommon for the read vs. write fan orders to be misaligned.
+
+The write fan order depends on how the motherboard manufacturer chose to tweak a given board's BMC firmware. At times it is in a logical order and sometimes it's not. For example, the ASRock Rack X470D4U has fan headers named FAN1-FAN6. With IPMI write commands, they must be ordered sequentially in IPMI raw commands, as one would expect. This is an excellent practice on the part of ASRock. However, the company's fan ordering logic is not consistent across all product lines. Contrasting examples are ASRock Rack board models E3C224D2I and E3C226D2I, which require this fan order: {CPU_FAN1} {dummy byte} {REAR_FAN1} {dummy byte} {FRNT_FAN1} {dummy byte} {dummy byte} {dummy byte}. Certainly not intuitive.
+
+Note this issue only matters when the BMC requires IPMI write commands addressed to the BMC's fan control logic to include an entire group of fan headers in the same command. So, if a given BMC uses zoned control for example (e.g. most Supermicro boards), or allows a combination of universal (one command sent to all fan headers at once) and addressing fan headers individually - such as many Dell and HPE server boards - then this topic is not applicable.

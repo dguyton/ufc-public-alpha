@@ -1,0 +1,10 @@
+<a id="bmc"></a>**BMC** : Baseboard Management Controller<br>
+<a id="drac"></a>**DRAC** : Dell Remote Access Controller<br>
+<a id="idrac"></a>**iDRAC** : Integrated Dell Remote Access Controller<br>
+<a id="freeipmi"></a>**FreeIPMI** : <br>
+<a id="ilo"></a>**iLO** : firmware created and owned by Hewlett-Packard Enterprises (HPE), also known simply as HP<br>
+<a id="imm"></a>**IMM** : Integrated Management Module (IMM). This is IBM's proprietary Baseboard Management Controller (BMC) hardware and software (similar to Dell's iDRAC platform).<br>
+<a id="ipmi"></a>**IPMI** : Intelligent Platform Management Interface<br>
+<a id="ipmitool"></a>**ipmitool** : <br>
+<a id="openbmc"></a>**OpenBMC** : <br>
+<a id="xclarity"></a>**XClarity** : firmware created and owned by Lenovo<br>
