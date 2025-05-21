@@ -1,0 +1,40 @@
+# Universal Fan Controller (UFC)
+#
+# DO NOT REMOVE LINE BELOW
+# program_version="2.0"
+
+##
+# Wants     = link to second service but not a hard dependency
+# Before    = must run before calling Runtime service daemon
+# After     = start after this systemd service is available
+# OnFailure = call failure handler on failure of this service daemon
+#
+# Type            = use notify to send status updates to systemd
+# NotifyAccess    = allows the service to send notifications to systemd (all = via main script, subroutines, or other scripts called by main)
+# ExecStart       = path to program script, which is responsible for sending updates to systemd via service API
+# TimeoutStartSec = maximum time in seconds for program script to send READY=1 message via systemd-notify API (if not sent in time, service is considered to have failed)
+##
+
+[Unit]
+# Description=Universal PID Fan Controller Service Launcher
+# Wants=runtime.service
+# Before=runtime.service
+After=network.target
+# OnFailure=failure-handler.service
+# OnSuccess=Runtime.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+# ExecStart=/path/to/Launcher-program.sh
+TimeoutStartSec=120
+RemainAfterExit=no
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=600
+StartLimitBurst=3
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

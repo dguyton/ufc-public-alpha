@@ -1,0 +1,75 @@
+# PID fan controller
+# include file manifest for Service Runtime
+#
+# DO NOT REMOVE LINE BELOW
+# program_version="2.0"
+
+# common (shared) functions
+automate_excluded_fans.sh
+binary_is_empty.sh
+calibrate_active_fan_headers.sh
+calibrate_active_fan_zones.sh
+clean_fan_rpm.sh
+compile_group_duty_cycle_payload.sh
+convert_array_to_hex.sh
+convert_binary_to_array.sh
+convert_perms_to_level.sh
+create_log_file.sh
+enforce_cpu_cooling_priority.sh
+execute_ipmi_fan_payload.sh
+flush_binary.sh
+get_fan_info.sh
+normalize_text.sh
+parse_fan_state.sh
+parse_file_version.sh
+parse_ipmi_column.sh
+query_ordinal_in_binary.sh
+query_target_permissions.sh
+run_command.sh
+set_all_fans_mode.sh
+set_fan_duty_cycle.sh
+set_ordinal_in_binary.sh
+set_target_permissions.sh
+stat_file_system_object.sh
+system_logger.sh
+trim_trailing_slash.sh
+validate_cpu_fan_headers.sh
+validate_fan_category_name.sh
+
+# service only
+active_fan_sweep.sh
+build_date_string.sh
+build_time_string.sh
+build_date_time_string.sh
+calc_pid.sh
+calculate_cpu_fan_level_from_temp.sh
+compute_trend.sh
+convert_cpu_fan_level_to_fan_duty.sh
+convert_fan_duty_to_fan_level.sh
+count_active_ordinals_in_binary.sh
+cpu_fan_speed_filter.sh
+current_time.sh
+disable_failure_handler_daemon.sh
+enable_failure_handler_daemon.sh
+get_cpu_temp.sh
+get_device_temp.sh
+pause.sh
+poll_device_list.sh
+print_log_summary.sh
+print_stats_to_json_log.sh
+refresh_failure_handler_daemon.sh
+send_email_alert.sh
+trace_debug.sh
+validate_device_fan_override_mode.sh
+validate_fan_duty_assignments.sh
+validate_fan_duty_cycle.sh
+validate_suspicious_fans.sh
+
+# independent builder and service program versions
+bail_noop.sh
+bail_with_fans_full.sh
+bail_with_fans_optimal.sh
+debug_print.sh
+
+# optional custom service version by motherboard manufacturer and/or model
+# set_all_fans_mode.sh

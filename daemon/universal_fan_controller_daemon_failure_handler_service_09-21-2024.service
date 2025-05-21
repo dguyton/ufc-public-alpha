@@ -1,0 +1,14 @@
+# Universal Fan Controller (UFC) Failure Notification Handler Service Daemon
+#
+# DO NOT REMOVE LINE BELOW
+# program_version="2.0"
+
+[Unit]
+# Description="Email UFC Systemd Notifications on Service program failure"
+# After=launcher.service runtime.service
+
+[Service]
+Type=oneshot
+# Environment="email="
+# Environment="log_filename="
+# ExecStart=/path/to/your_failure_handler_script.sh

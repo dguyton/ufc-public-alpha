@@ -1,0 +1,68 @@
+# PID fan controller
+# include file manifest for Service Launcher
+#
+# DO NOT REMOVE LINE BELOW
+# program_version="2.0"
+
+# common (shared) functions
+automate_excluded_fans.sh
+binary_is_empty.sh
+calibrate_active_fan_headers.sh
+calibrate_active_fan_zones.sh
+clean_fan_rpm.sh
+compile_group_duty_cycle_payload.sh
+convert_array_to_hex.sh
+convert_binary_to_array.sh
+convert_perms_to_level.sh
+create_init_file.sh
+create_log_file.sh
+enable_manual_fan_control.sh
+enforce_cpu_cooling_priority.sh
+execute_ipmi_fan_payload.sh
+flush_binary.sh
+gcd.sh
+get_fan_info.sh
+load_bmc_fan_thresholds.sh
+normalize_text.sh
+parse_fan_state.sh
+parse_file_version.sh
+parse_ipmi_column.sh
+query_ordinal_in_binary.sh
+query_target_permissions.sh
+run_command.sh
+set_all_fans_mode.sh
+set_fan_duty_cycle.sh
+set_ordinal_in_binary.sh
+set_target_permissions.sh
+stat_file_system_object.sh
+system_logger.sh
+trim_trailing_slash.sh
+validate_cpu_fan_headers.sh
+validate_fan_category_name.sh
+
+# service only
+build_date_time_string.sh
+current_time.sh
+disable_failure_handler_daemon.sh
+enable_failure_handler_daemon.sh
+initialize_active_fan_headers.sh
+poll_device_list.sh
+print_exit_code_legend.sh
+print_log_summary.sh
+refresh_failure_handler_daemon.sh
+scd.sh
+send_email_alert.sh
+trace_debug.sh
+update_runtime_init_file.sh
+validate_current_bmc_fan_thresholds.sh
+validate_fan_inventory.sh
+
+# independent builder and service program versions
+bail_noop.sh
+bail_with_fans_full.sh
+bail_with_fans_optimal.sh
+debug_print.sh
+
+# may be common function or custom service version by motherboard manufacturer and/or model
+# enable_manual_fan_control.sh
+# set_all_fans_mode.sh

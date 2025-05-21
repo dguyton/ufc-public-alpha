@@ -1,0 +1,39 @@
+# Universal Fan Controller (UFC) Service Runtime daemon
+#
+# DO NOT REMOVE LINE BELOW
+# program_version="2.0"
+
+##
+# Explanation of select parameters
+#
+# After				: this service only runs after Launcher service daemon completes
+# On-Failure			: call failure notification handler on failure of this service daemon
+# ExecStart			: command or program to execute when After/Before/Requires conditions are met
+# ExecStop			: command or program to execute after ExecStart processes have completed successfully (exit code = 0)
+# RemainAfterExit		: not needed, as the service runs continuously
+# Restart=on-failure	: under what circumstances to restart service if it crashes
+# RestartSec			: wait this many seconds between restarts after service failed, to prevent race conditions
+# StartLimitIntervalSec	: maximum duration in seconds which may pass after 1st time the service fails, before giving up when it keeps failing after restart attempts
+# StartLimitBurst		: maximum number of restart attempts during the restart time limit period
+# KillSignal			: when stopping the service manually or by the system, try to stop it via this signal type first
+# TimeoutStopSec		: number of seconds to wait and see if KillSignal stops this service, and after this timer expires, escalate stop method to SIGKILL
+##
+
+[Unit]
+# Description=Universal PID Fan Controller Service Runtime
+# After=first.service
+# OnFailure=failure-handler.service
+
+[Service]
+Type=simple
+# ExecStart=/path/to/pid-fan-controller_runtime_program.sh
+RemainAfterExit=no
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=900
+StartLimitBurst=3
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
